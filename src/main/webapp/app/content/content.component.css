@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Crete+Round|Poppins');
+.btn-home-cadastro-clientes {
+    top: 390px;
+    padding: 20px;
+    font-size: 25px;
+    width: 40%;
+    background: #52528B;
+    color: #fff;
+    border: 2px solid;
+    }
+    .inner{
+        text-align: center;
+    }

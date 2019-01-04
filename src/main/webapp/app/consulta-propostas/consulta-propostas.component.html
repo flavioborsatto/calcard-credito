@@ -1,0 +1,51 @@
+<div class="container">
+        <div class="row box-cadastro">
+          <div class="col-12">
+                <form class="mt-5" (ngSubmit)="consultar()" [formGroup]="formularioDeConsulta">
+                    <div class="form-group">
+                        <input type="text" class="form-control cadastro"  placeholder="Cpf" formControlName="cpf" name="cpf" id="cpf">
+                        <button  [disabled]="!formularioDeConsulta.valid" type="submit" class="btn btn-cadastro btn-lg" >Consultar</button>
+                    </div>
+                </form>
+            </div>
+         </div>
+</div>
+ 
+<table class="table table-striped table-bordered table-condensed table-hover">
+    <thead>
+    <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Idade</th>
+        <th>Sexo</th>
+        <th>Estado Civil</th>
+        <th>Estado</th>
+        <th>Dependentes</th>
+        <th>Renda</th>
+        <th>Situação</th>
+      </tr>
+    </thead>
+ 
+    <tbody>
+        <tr *ngFor="let proposta of propostas; let i = index;">
+        <td>{{ proposta.id }}</td>        
+        <td>{{ proposta.nome }}</td>  
+        <td>{{ proposta.cpf }}</td>  
+        <td>{{ proposta.idade }}</td>  
+        <td>{{ proposta.sexo }}</td>  
+        <td>{{ proposta.estadoCivil }}</td>  
+        <td>{{ proposta.estado }}</td>  
+        <td>{{ proposta.dependentes }}</td>
+        <td>{{ proposta.renda }}</td>   
+        <td>{{ proposta.situacao }} - {{proposta.descricaoSituacao}}</td>        
+        </tr>
+        <tr>
+           <td colspan="10" style="text-align: right;">Total de Registros: {{ propostas.length }}</td> 
+        </tr>
+    </tbody>
+</table>
+
+<div class="inner">
+    <button class="btn btn-home-cadastro-clientes" (click)="gotoCadastroClientes()">Nova Proposta</button>
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row box-cadastro">
+    <div class="col-12">
+      <h3 class="text-center">Preencha os dados do cliente</h3>
+      <form class="mt-5" (ngSubmit)="salvar()" [formGroup]="formularioDeUsuario">
+        <div class="form-group">
+          <input type="text" class="form-control cadastro"  placeholder="Nome" formControlName="nome" name="name" id="name" required>
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control cadastro"  placeholder="CPF" formControlName="cpf" name="cpf">
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control cadastro"  placeholder="Idade" formControlName="idade" name="idade">
+        </div>
+        <div class="form-group">
+            <select formControlName="sexo" class="form-control cadastro" name="sexo">
+                <option value="">SELECIONE O SEXO</option>
+                <option value="M">MASCULINO</option>
+                <option value="F">FEMININO</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <select formControlName="estadoCivil" class="form-control cadastro" name="estadoCivil"  required="true">
+            <option value="">SELECIONE O ESTADO CIVIL</option>
+            <option value="CASADO">CASADO(A)</option>
+            <option value="DIVORCIADO">DIVORCIADO(A)</option>
+            <option value="SOLTEIRO">SOLTEIRO(A)</option>
+            <option value="VIUVO">VIÚVO(A)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control cadastro" placeholder="Estado" formControlName="estado" name="estado">
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control cadastro" placeholder="Dependentes" formControlName="dependentes" name="dependentes">
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control cadastro" placeholder="Renda" formControlName="renda" name="renda"> 
+        </div>
+        <button  [disabled]="!formularioDeUsuario.valid" type="submit" class="btn btn-cadastro btn-lg" >Cadastrar</button>
+        <br/>
+      </form>
+      </div>
+    </div>
+  </div>

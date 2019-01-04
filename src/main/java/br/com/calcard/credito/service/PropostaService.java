@@ -28,7 +28,7 @@ public class PropostaService {
 			proposta.setSituacao(SituacaoEnum.REPROVADA);
 			proposta.setDescricaoSituacao("Proposta negada por renda baixa");
 		} else {
-			Integer pontuacaoDependente = proposta.getEstadoCivil().equals(EstadoCivilEnum.CASADO) ? 501 : 1001;
+			Integer pontuacaoDependente = proposta.getEstadoCivil().equals(EstadoCivilEnum.DIVORCIADO) ? 501 : 1001;
 			BigDecimal pontuacao = proposta.getRenda().subtract(new BigDecimal(proposta.getDependentes() * pontuacaoDependente));
 			Faixa faixa = faixaRepository.pesquisarFaixa(pontuacao);
 			proposta.setFaixa(faixa);

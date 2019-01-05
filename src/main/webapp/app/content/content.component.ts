@@ -19,4 +19,8 @@ export class ContentComponent implements OnInit {
   gotoCadastroClientes() {
     this.router.navigate(['cadastro']);
    }
+
+   gotoConsultaPropostas() {
+    this.router.navigate(['consulta']);
+   }
 }
